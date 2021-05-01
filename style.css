@@ -35,6 +35,7 @@
       align-items:center;
       justify-content:center;
       min-height:100vh;
+      background: linear-gradient(3deg, var(--pink), #b970a3);
   }
 
   .wrapper{
