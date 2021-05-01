@@ -10,6 +10,7 @@ nextBtn = wrapper.querySelector("#next")
 progressBar = wrapper.querySelector(".progress-bar")
 progressArea = wrapper.querySelector(".progress-area")
 repeatBtn = wrapper.querySelector('#repeat-plist')
+expand = wrapper.querySelector('.expand');
 
 let musicIndex = 1
 
@@ -129,7 +130,15 @@ repeatBtn.addEventListener('click', (e)=>{
             break;
         case "shuffle":
             repeatBtn.innerText = "repeat";
-            repeatBtn.setAttribute('title', 'Playlist Looped');
+            getText.setAttribute('title', 'Playlist Looped');
             break;
     }
+})
+
+
+expand.addEventListener('click', ()=>{
+    document.querySelector('.music-list').classList.toggle('show')
+})
+document.getElementById('close').addEventListener('click', ()=>{
+    document.querySelector('.music-list').classList.remove('show')
 })

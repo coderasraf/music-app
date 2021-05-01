@@ -185,17 +185,19 @@
     left:0;
     bottom:-55;
     opacity:0;
+    visibility: hidden;
     pointer-events: none;
     background:var(--white);
     border-radius:15px;
     box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
     width:100%;
     padding: 15px 30px;
-    transition: all .13s ease-in-out;
+    transition: .13s ease-in-out;
 }
 .music-list.show{
     bottom:0;
     opacity:1;
+    visibility: visible;
     pointer-events: auto;
 }
 .music-list .header .row{
