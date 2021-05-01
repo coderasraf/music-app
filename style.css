@@ -92,10 +92,11 @@
       width:100%;
       border-radius:50px;
       background:#f0f0f0;
+      cursor:pointer;
   }
   .progress-area .progress-bar{
       height:inherit;
-      width:50%;
+      width:0%;
       background:linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
       position: relative;
       cursor: pointer;
