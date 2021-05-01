@@ -47,7 +47,7 @@
   .wrapper i{
       cursor: pointer;
   }
-  .top-bar{
+  .top-bar, .progress-area .timer, .controls{
       display:flex;
       align-items: center;
       justify-content: space-between;
@@ -59,6 +59,115 @@
   .img-area{
       height:256px;
       width:100%;
-    border-radius:15px;
+      border-radius:15px;
       box-shadow:0 6px 10px var(--lightbshadow);
+      overflow:hidden;
+      margin: 15px 0;
   }
+  .img-area img{
+      width:100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  .song-details{
+      text-align:center;
+      margin:20px 0;
+      color:var(--lightblack);
+  }
+  .song-details .name{
+      font-size:21px;
+  }
+  .song-details .artist{
+      opacity:.9;
+      font-size:18px;
+  }
+  .progress-area{
+      height:6px;
+      width:100%;
+      border-radius:50px;
+      background:#f0f0f0;
+  }
+  .progress-area .progress-bar{
+      height:inherit;
+      width:50%;
+      background:linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
+      position: relative;
+      cursor: pointer;
+  }
+ .progress-bar::after{
+     position: absolute;
+     content:"";
+     height:12px;
+     width:12px;
+     border-radius:50%;
+     background: inherit;
+     top:50%;
+     right:-5%;
+     transform: translateY(-50%);
+     opacity: 0;
+     transition: .3s ease-in-out;
+ }
+ .progress-area:hover .progress-bar::after{
+     opacity:1;
+ }
+ .progress-area .timer{
+    margin-top:2px;
+ }
+ .timer span{
+     font-size:13px;
+     color: var(--lightblack);
+ }
+ .controls{
+    margin:40px 0 5px 0;
+ }
+ .controls i{
+     font-size:28px;
+     user-select: none;
+     background:linear-gradient(var(--pink) 0%, var(--violet) 100%);
+     background-clip: text;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
+ .controls i:nth-child(2),
+ .controls i:nth-child(4){
+     font-size:43px;
+ }
+ .controls #prev{
+     margin-right:-13px;
+ }
+ .controls #next{
+    margin-left:-13px;
+}
+.controls .play-pause{
+    height:54px;
+    width:54px;
+    background:linear-gradient(var(--white) 0%, var(--darkwhite) 100%);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px var(--pink);
+    border-radius:50%;
+    position:relative;
+}
+
+.play-pause::before{
+    position: absolute;
+    width:43px;
+    height:43px;
+    background:linear-gradient(var(--pink) 0%, var(--violet) 100%);
+    content:"";
+    border-radius:inherit;
+}
+
+.controls .play-pause i{
+    height:43px;
+    width:43px;
+    background:inherit;
+    border-radius:inherit;
+    background-clip: text;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 43px;
+    text-align: center;
+}
